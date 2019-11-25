@@ -1,17 +1,9 @@
 import React from 'react';
-import ActivityGrid from './components/ActivityGrid';
-import TimeKeeper from './components/TimeKeeper';
+import ActivitiesContainer from './containers/ActivitiesContainer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      <TimeKeeper/>
-      <ActivityGrid/>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <ActivitiesContainer/>
+)
 
 export default App;

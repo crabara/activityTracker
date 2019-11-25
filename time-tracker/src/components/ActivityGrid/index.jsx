@@ -1,28 +1,22 @@
-import React, { useEffect } from 'react';
-import { setStorageData } from '../../utils/setActivities';
+import React from 'react';
+import ActivityEntry from '../../components/ActivityEntry';
 
 import './styles.scss';
 
-const ActivityGrid = () => {
-
-    useEffect(() => {
-        setStorageData();
-    })
-
-    return(
-        <div className="activityTableContainer">
-            <table className="activityTable">
-                <tr>
+const ActivityGrid = ({ records }) => (
+    <div className="activityTableContainer">
+        <table className="activityTable">
+            <tr>
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Duration</th>
                 <th>Description</th>
-                </tr> 
-            </table>
-
-        </div>
-    )
-
-}
+            </tr>
+            {records.map((record, index) =>
+                ActivityEntry(record, index)
+            )}
+        </table>
+    </div>
+)
 
 export default ActivityGrid;
