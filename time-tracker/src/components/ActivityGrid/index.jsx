@@ -6,6 +6,7 @@ import './styles.scss';
 const ActivityGrid = ({ records }) => (
     <div className="activityTableContainer">
         <table className="activityTable">
+            <tbody>
             <tr>
                 <th>Start Time</th>
                 <th>End Time</th>
@@ -15,6 +16,7 @@ const ActivityGrid = ({ records }) => (
             {records.map((record, index) =>
                 ActivityEntry(record, index)
             )}
+            </tbody>
         </table>
     </div>
 )

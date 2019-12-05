@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import moment from 'moment';
+import { calcDuration } from '../../utils/setActivities';
 
 import './styles.scss';
 
@@ -23,13 +23,11 @@ function useInterval(callback, delay) {
       }
     }, [delay]);
   }
-
+  
 function Duration({ startTime, endTime }) {
-    const [duration, setDuration] = useState('00:00:00')
+    const [duration, setDuration] = useState(calcDuration(startTime, endTime))
     useInterval(()=> {
-        startTime = typeof(startTime) === 'string' ? moment(startTime) : startTime;
-        let elapsedDuration = endTime.diff(startTime);
-        setDuration(moment.utc(elapsedDuration).format('HH:mm:ss'))
+       setDuration(calcDuration(startTime, endTime))
     }, !endTime ? 1000 : null)
   return (
   <td>{duration}</td>

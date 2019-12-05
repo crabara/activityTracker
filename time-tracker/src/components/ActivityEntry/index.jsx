@@ -4,17 +4,13 @@ import Duration from '../Duration';
 
 import './styles.scss';
 
-const ActivityEntry = ({ startTime, endTime, description }, index) => (
+const ActivityEntry = ({ startTime, endTime, description, duration }, index) => (
     <tr key={index}>
-        <td>{typeof (startTime) === 'string' ? moment(startTime).format('LTS') : startTime.format('LTS')}</td>
+        <td>{moment(startTime).format('LTS')}</td>
         <td>{endTime}</td>
-        <Duration
-            startTime={startTime}
-            endTime={endTime}
-        />
+        {duration || <Duration startTime={startTime} endTime={endTime}/>}
         <td>{description}</td>
     </tr>
-
 )
 
 export default ActivityEntry;
