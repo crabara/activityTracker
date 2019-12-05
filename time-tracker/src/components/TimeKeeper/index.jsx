@@ -16,7 +16,7 @@ const TimeKeeper = ({ startHandler, nextHandler, endHandler, currentRecord }) =>
 
         <div className="endActivity">
             <h3>End An Activity</h3>
-            <div className="endActivity__description">{currentRecord ? currentRecord.description : ''}</div>
+            <div className="endActivity__description">current record description:{currentRecord ? currentRecord.description : ''}</div>
             <button className="endActivity__btnEnd" onClick={endHandler}>End activity</button>
         </div>
     </div>
