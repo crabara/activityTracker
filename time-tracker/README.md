@@ -1,3 +1,11 @@
+Decided not to use Redux here, as I could get full functionality with hooks. Although I do usually use Redux with a ducks pattern.
+
+https://github.com/erikras/ducks-modular-redux
+
+I would like to add cypress automated tests, but due to the holidays, I didn't want to wait.
+In theory we could also add styled components, or use BEM css pattern to structure the styles ourselves.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
